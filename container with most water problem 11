@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int n = height.size();
+        int leftP= 0, rightP= n-1, ans =0;
+        while(leftP<rightP){
+            int weight = rightP-leftP;
+            int ht = min(height[leftP],height[rightP]);
+            int curr = weight*ht;
+            ans = max(ans,curr);
+
+        
+        height[leftP]<height[rightP]?leftP++:rightP--;
+        }
+        return ans;
+        
+    }
+};
