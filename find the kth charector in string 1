@@ -1,0 +1,16 @@
+class Solution {
+public:
+int cnt(int n){
+    int setbits =0;
+    while(n){
+        n &= n-1;
+        setbits++;
+    }
+    return setbits;
+}
+    char kthCharacter(int k) {
+        return 'a'+cnt(k-1);
+
+        
+    }
+};
